@@ -23,12 +23,17 @@ root.resizable ( False , False )
 ext_name=['.cpp','.py','.c','.java','.php','.rust']
 
 url_check=True
-
+snippet_txt=open('s_loc.txt', 'w')
 def bs_text():
     if(os.stat("s_loc.txt").st_size == 0):
-        return "No Snippet added !!"
+        label1=Label(root, text="No Snippet has been added currently!!", font=("Courier 10 bold"))
+        label1.pack()
+        #return "No Snippet added !!"
     else:
-        return "Update Snippet ?"
+        label2=Label(root, text="Snippet Exists!!", font=("Courier 10 bold"))
+        label2.pack()
+        #return "Update Snippet ?"
+    return "Add/Update Snippet ?"
 
 def snippet_loc():
     snippet_loc = filedialog.askopenfilename()
@@ -36,6 +41,13 @@ def snippet_loc():
         if snippet_loc.endswith(extension):
             with open('s_loc.txt', 'w') as f:
                     f.write(snippet_loc)
+    if(os.stat("s_loc.txt").st_size != 0):
+        label3=Label(root, text="Snippet has been Added/Updated!!", font=("Courier 10 bold"))
+        label3.pack()
+
+        
+
+
 
         
 # FOLDER CREATER OVERALL start
