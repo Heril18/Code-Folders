@@ -15,7 +15,9 @@ import shutil
 
 
 root = Tk ( )
-root.geometry ( "600x600" )
+
+root.iconbitmap("Code-folders.ico")
+root.geometry ( "400x400" )
 root.title ( "Code Folders" )
 root.config ( bg = "lightblue" )
 root.resizable ( False , False )
